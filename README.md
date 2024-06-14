@@ -3,6 +3,7 @@
 - Works in 2024
 - Weakly releases
 - Fully automated via GitHub actions
+- Windows WSL2 installation instructions
 
 ## Download
 - Download the latest Artix base/server rootfs tarball (main purpose of this repo is maintaing of this tarball):
@@ -37,20 +38,20 @@ And if you want to continue as WSL installation:
   
 - Start a new Powershell session:
   <br>`<WIN + r>` `powershell` `<ENTER>`
-  <br><br>![image 1]()
+  <br><br>![image 1](https://github.com/john-g4lt/artix-rootfs/assets/172701622/caca3084-fd1a-4feb-8e1b-a5226975940f)
   <br>Or just run Powershell from Windows Start Menu
 
 - Create sources directory:
   ```bash
   mkdir /wsl_distros/sources
   ```
-  ![image 2]()
+  ![image 2](https://github.com/john-g4lt/artix-rootfs/assets/172701622/b5baa742-864c-44e7-b61c-fc9dc3c66e04)
 
 - Copy (or move) the `artix_rootfs.tar.xz` to the `/wsl_distros/sources/` directory:
   ```bash
   cp -v $HOME/Downloads/artix_rootfs.tar.xz /wsl_distros/sources/
   ```
-  ![image 3]()
+  ![image 3](https://github.com/john-g4lt/artix-rootfs/assets/172701622/243f0848-80d1-4b91-99c6-f06073a854ff)
 
 - Update WSL (min 2 Apr 2023, required for importing from `.xz`):
   ```bash
@@ -61,13 +62,13 @@ And if you want to continue as WSL installation:
   ```bash
   wsl.exe --import Artix /wsl_distros/Artix /wsl_distros/sources/artix_rootfs.tar.xz --version 2
   ```
-  ![image 4]()
+  ![image 4](https://github.com/john-g4lt/artix-rootfs/assets/172701622/bbeae98b-3b48-4c1d-ab60-b5f8f00558c1)
 
 - Ensure the distro has been imported correctly:
   ```bash
   wsl.exe --list --verbose
   ```
-  ![image 5]()
+  ![image 5](https://github.com/john-g4lt/artix-rootfs/assets/172701622/4777ac9b-6025-416b-b9fa-0421adce362c)
 
 - Create on your desktop shortcut with path:
   ```bash
@@ -80,7 +81,7 @@ And if you want to continue as WSL installation:
 
 - Run it
 
-  ![image 6]()
+  ![image 6](https://github.com/john-g4lt/artix-rootfs/assets/172701622/1d8860c9-8baa-4e43-abe2-f7bb1d982b53)
 
 - Perform initial pacman-key setup, update the system and add basic `sudo` package:
   ```bash
@@ -152,7 +153,7 @@ And if you want to continue as WSL installation:
 
 - Run it
 
-  ![image 7]()
+  ![image 7](https://github.com/john-g4lt/artix-rootfs/assets/172701622/8fe895a4-557e-48b6-8c83-057b1bcf11cb)
 
   And here you are, logged as your user
 
