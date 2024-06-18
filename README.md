@@ -163,13 +163,22 @@ And if you want to continue as WSL installation:
   I prefer [Roboto Mono Regular/Medium](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.zip)
   - Add arch extra repositories mirrors:
     ```bash
+    sudo pacman -S artix-archlinux-support
+    ```
+    ```bash
+    sudo pacman-key --populate archlinux
+    ```
+    ```bash
+    sudo rm /etc/pacman.d/mirrorlist-arch
+    ```
+    ```bash
     sudo curl -sL https://archlinux.org/mirrorlist/all/ -o /etc/pacman.d/mirrorlist-arch
     ```
     ```bash
     sudo sed -i 's/#Server = /Server = /g' /etc/pacman.d/mirrorlist-arch
     ```
     ```bash
-    echo -e "\n\n# Arch\n[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n[multilib]\nInclude /etc/pacman.d/mirror-lsit-arch\n" | sudo tee -a /etc/pacman.conf
+    echo -e "\n\n# Arch\n[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n" | sudo tee -a /etc/pacman.conf
     ```
     ```bash
     sudo pacman -Syyu --noconfirm
