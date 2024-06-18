@@ -172,7 +172,7 @@ And if you want to continue as WSL installation:
     echo -e "\n\n# Arch\n[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n[multilib]\nInclude /etc/pacman.d/mirror-lsit-arch\n" | sudo tee -a /etc/pacman.conf
     ```
     ```bash
-    sudo pacman -Syyu
+    sudo pacman -Syyu --noconfirm
     ```
 
 - Happy hacking :)
