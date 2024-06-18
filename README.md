@@ -23,7 +23,7 @@ For more experienced users: you can use `get.sh` script to get official images y
   Where:
   - First argument sets xz compression level to 1 as you are not limited by GitHub size limit and don't want to waste time
   - Second argument sets threads count to 1, you can calculate it yourself using `lscpu`
-<br><br>
+
 And if you want to continue as WSL installation:
 - Copy result tarball to Windows `Downloads` folder (change `WINDOWS_USERNAME` to your Windows user username):
   ```bash
@@ -161,6 +161,19 @@ And if you want to continue as WSL installation:
   - Pin to taskbar after running
   - Download, install and set your own [Nerd Font](https://www.nerdfonts.com/font-downloads), 
   I prefer [Roboto Mono Regular/Medium](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.zip)
+  - Add arch extra repositories mirrors:
+    ```bash
+    sudo curl -sL https://archlinux.org/mirrorlist/all/ -o /etc/pacman.d/mirrorlist-arch
+    ```
+    ```bash
+    sudo sed -i 's/#Server = /Server = /g' /etc/pacman.d/mirrorlist-arch
+    ```
+    ```bash
+    echo -e "\n\n# Arch\n[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n[multilib]\nInclude /etc/pacman.d/mirror-lsit-arch\n" | sudo tee -a /etc/pacman.conf
+    ```
+    ```bash
+    sudo pacman -Syyu
+    ```
 
 - Happy hacking :)
 
