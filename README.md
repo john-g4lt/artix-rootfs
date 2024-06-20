@@ -1,8 +1,8 @@
-# [Artix](artixlinux.org) Linux rootfs & Windows WSL (WSL2) installation
+# [Artix](https://artixlinux.org/) Linux rootfs & Windows WSL (WSL2) installation
 **Features:**
 - Works in 2024
 - Weakly releases
-- [Fully automated via GitHub actions](github.com/john-g4lt/artix-rootfs/actions/workflows/ci.yml)
+- [Fully automated via GitHub actions](https://github.com/john-g4lt/artix-rootfs/actions/workflows/ci.yml)
 - Windows WSL2 installation instructions
 
 ## Download
