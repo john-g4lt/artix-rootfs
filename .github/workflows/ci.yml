@@ -22,13 +22,6 @@ jobs:
           echo -e "- Version: $ARTIX_VERSION\n- [Extracted from weakly Artix releases official mirror](https://mirror1.artixlinux.org/weekly-iso/)\n" > release_body.txt
           echo "artix_version=$ARTIX_VERSION" >> $GITHUB_OUTPUT
 
-      - name: Upload tarball as GitHub artifact
-        uses: actions/upload-artifact@v4.3.3
-        with:
-          name: artix_rootfs.tar.xz
-          path: artix_rootfs.tar.xz
-          if-no-files-found: error
-
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2.0.5
         with:
