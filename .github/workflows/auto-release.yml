@@ -1,4 +1,4 @@
-name: CI
+name: auto-release
 on:
   workflow_dispatch:
   schedule:
@@ -10,20 +10,20 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v4.2.1
 
       - name: Run get.sh 
         id: sh
         run: |
           sudo chmod +x get.sh
           source get.sh 1 2
-          echo -e "- Version: $ARTIX_VERSION\n- [Extracted from weakly Artix releases official mirror](https://mirror1.artixlinux.org/weekly-iso/)\n" > release_body.txt
+          echo -e "- Version: $ARTIX_VERSION" >> release_body.txt
+          echo -e "- [Extracted from weakly Artix releases official mirror](https://mirror1.artixlinux.org/weekly-iso/)" >> release_body.txt
           echo "artix_version=$ARTIX_VERSION" >> $GITHUB_OUTPUT
 
-      - name: Create GitHub release
-        uses: softprops/action-gh-release@v2.0.5
+      - name: create GitHub release
+        uses: softprops/action-gh-release@v2.0.8
         with:
           name: ${{ steps.sh.outputs.artix_version }}
           tag_name: ${{ steps.sh.outputs.artix_version }}
