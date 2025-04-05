@@ -20,7 +20,7 @@ main() {
     fi
 
     echo "- Getting the latest Artix version ..."
-    local ver=$( curl "https://mirror1.artixlinux.org/weekly-iso/" 2>&1 | grep -F 'href="artix-base-dinit-' 2>&1 | sed -r "s/^.*href=\"artix-base-dinit-([0-9]+)-x86_64.iso\".*/\1/")
+    local ver=$( curl "https://mirror1.artixlinux.org/weekly-iso/" 2>&1 | grep -F 'href="artix-base-dinit-' 2>&1 | sed -r "s/^.*href=\"artix-base-dinit-([0-9]+)-x86_64.iso\".*$/\1/")
     export ARTIX_VERSION="$ver"
 
     local iso_dir="$cwd/artix_iso"
